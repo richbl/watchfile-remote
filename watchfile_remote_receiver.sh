@@ -48,7 +48,7 @@ function get_file_date() {
 #
 readonly SRC_DIR="/home/user/watchfile_remote"
 readonly WATCHFILE="the_watchfile"
-readonly EMAIL_ADDR="richbl@gmail.com"
+readonly EMAIL_ADDR="user@youremail.com"
 
 # get initial timestamp from file
 initial_timestamp=$(get_file_date "${SRC_DIR}" "${WATCHFILE}")
