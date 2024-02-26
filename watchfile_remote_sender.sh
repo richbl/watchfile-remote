@@ -28,9 +28,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 # script declarations
 #
-readonly SRC_DIR="/home/richbl/watchfile_remote"
-readonly DST_SERVER="richbl@businesslearninginc.com"
-readonly DST_DIR="/home/richbl/watchfile_remote"
+readonly SRC_DIR="/home/user/watchfile_remote"
+readonly DST_SERVER="user@yourdomain.com"
+readonly DST_DIR="/home/user/watchfile_remote"
 readonly WATCHFILE="the_watchfile"
 
 while :; do

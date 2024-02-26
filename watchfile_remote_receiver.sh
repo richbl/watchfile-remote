@@ -46,8 +46,9 @@ function get_file_date() {
 # -----------------------------------------------------------------------------
 # script declarations
 #
-readonly SRC_DIR="/home/richbl/documents/dev/watchfile_remote"
+readonly SRC_DIR="/home/user/watchfile_remote"
 readonly WATCHFILE="the_watchfile"
+readonly EMAIL_ADDR="richbl@gmail.com"
 
 # get initial timestamp from file
 initial_timestamp=$(get_file_date "${SRC_DIR}" "${WATCHFILE}")
@@ -70,14 +71,14 @@ while :; do
   if [[ $initial_timestamp -eq $updated_timestamp ]]; then
 
     if [[ $is_internet == true ]]; then
-      echo "Bummer... our home internet service is down!" | mailx -s "Home Internet Service is Down!" richbl@gmail.com
+      echo "Bummer... our home internet service is down!" | mailx -s "Home Internet Service is Down!" "$EMAIL_ADDR"
       is_internet=false
     fi
 
   else
 
     if [[ $is_internet == false ]]; then
-      echo "Yes... our home internet service is back up!" | mailx -s "Home Internet Service is Back Up!" richbl@gmail.com
+      echo "Yes... our home internet service is back up!" | mailx -s "Home Internet Service is Back Up!" "$EMAIL_ADDR"
       is_internet=true
     fi
 
