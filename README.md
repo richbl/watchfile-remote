@@ -30,7 +30,7 @@ While this package was initially written and tested under Linux (Ubuntu 23.10), 
 
 ### The Sender
 
-The sender component is a local LAN computer (typically a server that's always on). It's role will be to periodically send a token file (called `the_watchfile`) to the receiver.
+The sender component is a local LAN computer (typically a server that's always on). Its role will be to periodically send a token file (called `the_watchfile`) to the receiver.
 
 To configure the sender component:
 
@@ -42,7 +42,7 @@ To configure the sender component:
 
 ### The Receiver
 
-The receiver component is a remote computer not on the local LAN (typically a remote web server, or similar machine to which you have access). It's role will be to periodically watch for modifications to a token file (called `the_watchfile`) sent by the sender.
+The receiver component is a remote computer not on the local LAN (typically a remote web server, or similar machine to which you have access). Its role will be to periodically watch for modifications to a token file (called `the_watchfile`) sent by the sender.
 
 To configure the receiver component:
 
