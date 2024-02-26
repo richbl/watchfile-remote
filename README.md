@@ -2,7 +2,7 @@
 
 **Watchfile Remote** is a simply client-server pattern that configures both a sender (via the `watchfile_remote_sender.sh` script) and a receiver (`watchfile_remote_receiver.sh`) to monitor a single file for changes. Both of these scripts are started once, and then run indefinitely in the background.
 
-![watchfile_remote](https://github.com/richbl/watchfile-remote/assets/10182110/cfac4983-40b1-42f6-a926-113bd097772d)
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/richbl/watchfile-remote/assets/10182110/b36963db-6078-4b0b-b51d-b0340a75bc31"><source media="(prefers-color-scheme: light)" srcset="https://github.com/richbl/watchfile-remote/assets/10182110/b36963db-6078-4b0b-b51d-b0340a75bc31"><img src="[https://user-images.githubusercontent.com/10182110/145905455-5f94f57d-992d-4dab-a4e4-006a012ddbbc.png](https://github.com/richbl/watchfile-remote/assets/10182110/b36963db-6078-4b0b-b51d-b0340a75bc31)"></picture>
 
 ## Rationale
 
