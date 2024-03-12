@@ -1,6 +1,6 @@
 # Watchfile Remote
 
-**Watchfile Remote** is a simply client-server pattern that configures both a sender (via the `watchfile_remote_sender.sh` script) and a receiver (`watchfile_remote_receiver.sh`) to monitor a single file for changes. Both of these scripts are started once, and then run indefinitely in the background.
+**Watchfile Remote** is a simply client-server pattern that configures both a sender (via the `watchfile_remote_sender.sh` script) and a receiver (`watchfile_remote_receiver.sh`) to monitor a single file for changes (called "heartbeat detection"). Both of these scripts are started once, and then run indefinitely in the background.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/richbl/watchfile-remote/assets/10182110/2b5d9bdf-d05a-4d8f-ba28-9c72c6860357"><source media="(prefers-color-scheme: light)" srcset="https://github.com/richbl/watchfile-remote/assets/10182110/2b5d9bdf-d05a-4d8f-ba28-9c72c6860357"><img src="[https://user-images.githubusercontent.com/10182110/2b5d9bdf-d05a-4d8f-ba28-9c72c6860357](https://github.com/richbl/watchfile-remote/assets/10182110/2b5d9bdf-d05a-4d8f-ba28-9c72c6860357)"></picture>
 
@@ -10,8 +10,14 @@ This project was really created to resolve a very simple use case: how to know w
 
 So, this project is basically broken down into two parts:
 
-- The sender, which is a local server on our home LAN. This server, as the sender component of this project, periodically (every five minutes) attempts to send a "watchfile" up to a remote server (not on our home LAN). Nothing more. Pretty simple.
-- The receiver, which is located on one of my remote web servers, will watch for any updates to that watchfile at an interval of every 10 minutes. If that watchfile has been modified in the intervening 10 minutes, then my home internet service is up and running. On the other hand, if that watchfile hasn't changed, it would suggest that my home internet service is down. Again, pretty simple.
+- The sender, which is a local server on our home LAN. This server, as the sender component of this project, periodically (every 5 minutes is the default) attempts to send a "heartbeat" in the form of a simple file up to a remote server (not on our home LAN). Nothing more. Pretty simple.
+- The receiver, which is located on one of my remote web servers, will watch for any "heartbeat" updates to that watchfile at an interval of every (n) minutes (10 minutes is the default). If that watchfile has been modified in the intervening (n) minutes, then my home internet service is up and running. On the other hand, if that watchfile hasn't changed, it would suggest that my home internet service is down, so the receiver sends me an email with the bad news.
+
+### Wait a Second!... You Already Wrote This as a Rust Project
+
+Yep, that's right. [**Watchfile Remote [Rust Edition]** was written entirely using Rust and delivered as binary executables](https://github.com/richbl/rust-watchfile-remote). I wrote that project really as an exercise to understand how Rust can be written in such a way that it abstracts away external dependencies that `bash` scripts--by their very definition--rely upon.
+
+All told, while that Rust implementation makes for a solution with fewer external dependencies, writing this original `bash` script was much quicker and simpler overall (with many fewer lines of code). So, if you're running on hardware with a known Unix-like environment, you might find these `bash` scripts more appropriate for your own use case. However, if you want to see how an equivalent project written in Rust looks, check out [**Watchfile Remote [Rust Edition]**](https://github.com/richbl/rust-watchfile-remote).
 
 ## Requirements
 
