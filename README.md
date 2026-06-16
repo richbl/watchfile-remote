@@ -1,6 +1,8 @@
 # Watchfile Remote
 
-![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/richbl/watchfile-remote?include_prereleases)
+<!-- markdownlint-disable MD033 -->
+<a href="https://github.com/richbl/watchfile-remote/releases"><img alt="Link to Releases" src="https://badgen.net/github/tag/richbl/watchfile-remote?icon=github&label=release"></a>
+<!-- markdownlint-enable MD033 -->
 
 **Watchfile Remote** is a simply client-server pattern that configures both a sender (via the `watchfile_remote_sender.sh` script) and a receiver (`watchfile_remote_receiver.sh`) to monitor a single file for changes (called "heartbeat detection"). Both of these scripts are started once, and then run indefinitely in the background.
 
